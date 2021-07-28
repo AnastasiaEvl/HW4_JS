@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         function getMaxOfArray(){
+
+        let numbers = [];
+        
+
+        
+        while(true){
+            let n = prompt('Ввести число');
+            if (n === "" || n === null) break;
+            numbers.push(+n);}
+         
+           
+
+         let apply = Math.max.apply(null,numbers);
+         let indexOf = numbers.indexOf(apply);
+         return 'Номер в массиве -' + indexOf + '.Элемент- '+ apply;
+        }
+        
+        alert (getMaxOfArray());
+       
+    </script>
+    
+</body>
+</html>

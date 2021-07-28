@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    a:hover {background: #e2890b;} 
+
+    a { 
+    text-decoration: none;}
+    
+    div {display:inline;}
+   
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <h1>Создать меню</h1>
+    <form>
+    <p>Пункты меню: <input type="text" id='myMenu' placeholder="Главная, О компании, Новости"></p><br>
+    <p>Цвет текста: <input type="color" id = 'colorText' value='#FFFFFF'></p><br>
+    <p>Цвет фона: <input type="color" id = 'colorFone' value='#2E9AFE'></p><br>
+    <p>Цвет hover: <input type="color" id = 'colorHover' value='#FF8000'></p><br>
+    <p><input type ="button" value="Создать меню" onclick= "createMenu()"></p>
+    <div id="res"></div>
+
+
+
+    </form>
+
+    <script>
+
+        function createMenu (){
+        let str = myMenu.value; // "Главная, О компании, Новости"
+        let menus = str.split(', ');// массив
+        // let menus = [Главная', 'О компании', 'Новости'];
+        let bgColor = document.getElementById("colorFone").value;
+        let textColor = document.getElementById("colorText").value;
+        let hoverColor = document.getElementById("colorHover").value;
+        res.style.backgroundColor = bgColor;
+
+       
+        
+        let s='';
+        for(let menu of menus) {
+            s += `<div id=${menus.valueOf(menu)}> 
+            <a href="link.html" style="color: ${textColor} background: ${hoverColor};} ">${menu} </a> </div> `}
+            
+    
+        console.log(s);
+        res.innerHTML = s;
+        }
+
+        </script>
+
+
+    
+</body>
+</html>
